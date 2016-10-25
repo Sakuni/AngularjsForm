@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html ng-app="testApp" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <title>Spring Security Example</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="custom.css">
+</head>
+
+<script src="bower_components/angular/angular.js"></script>
+<script src="my_controller.js"></script>
+
+
+<h1>Welcome!</h1>
+
+
+<!--get data-->
+<h4>Get data</h4>
+
+<div ng-controller="my_controller">
+    {{marks}}
+
+    <!--post data-->
+    <h4>Post data</h4>
+
+    <p>Marks: <input type="text" name="marks" ng-model="postmark" required/></p>
+    <button ng-click="postMarks()">Submit</button>
+
+    {{ PostDataResponse }}
+    <hr/>
+
+    <!--usage of DTO-->
+    <h4>Post data and update db</h4>
+
+    <form class="form-horizontal" role="form">
+        <div class="form-group">
+            <label for="inputId3" class="col-sm-2 control-label">Id</label>
+
+            <div class="col-sm-4">
+                <input type="text" name="id" ng-model="userDTO.id" required/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputName3" class="col-sm-2 control-label">Name</label>
+
+            <div class="col-sm-4">
+                <input type="text" name="name" ng-model="userDTO.name" required/>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button ng-click="saveUser(userDTO)" class="btn btn-success">Submit</button>
+            </div>
+        </div>
+        {{ PostDataResponse1 }}
+        <hr/>
+    </form>
+
+    <h4>Example form</h4>
+
+    <form class="form-horizontal" role="form">
+        <div class="form-group">
+            <label for="inputId3" class="col-sm-2 control-label">Id</label>
+
+            <div class="col-sm-4">
+                <input type="text" class="form-control" id="inputId3" placeholder="Id" ng-model="formInfoDTO.Id">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputName3" class="col-sm-2 control-label">Name</label>
+
+            <div class="col-sm-4">
+                <input type="text" class="form-control" id="inputName3" placeholder="Name" ng-model="formInfoDTO.Name">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+
+            <div class="col-sm-4">
+                <input type="text" class="form-control" id="inputEmail3" placeholder="Email"
+                       ng-model="formInfoDTO.Email">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+
+            <div class="col-sm-4">
+                <input type="password" class="form-control" id="inputPassword3" placeholder="Password"
+                       ng-model="formInfoDTO.Password">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" ng-click="saveData(formInfoDTO)" class="btn btn-success">Sign up</button>
+            </div>
+        </div>
+        <!--<span>{{formInfo}}</span>-->
+    </form>
+
+    <!--{{PostDataResponse2}}-->
+
+
+</div>
+
+</body>
+</html>

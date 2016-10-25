@@ -1,0 +1,43 @@
+-- Table: angularjs.users
+
+-- DROP TABLE angularjs.users;
+
+CREATE TABLE angularjs.users
+(
+    id integer NOT NULL,
+    name character varying(200) COLLATE "default".pg_catalog,
+    auto_inc integer NOT NULL DEFAULT nextval('angularjs.users_auto_inc_seq'::regclass),
+    CONSTRAINT users_pkey PRIMARY KEY (id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE angularjs.users
+    OWNER to postgres;
+	
+	
+	
+	
+	
+	
+-- Table: angularjs.form
+
+-- DROP TABLE angularjs.form;
+
+CREATE TABLE angularjs.form
+(
+    name character varying(250) COLLATE "default".pg_catalog NOT NULL,
+    email character varying(250) COLLATE "default".pg_catalog NOT NULL,
+    password character varying(250) COLLATE "default".pg_catalog NOT NULL,
+    id integer NOT NULL DEFAULT nextval('angularjs.form_id_seq'::regclass),
+    CONSTRAINT form_pkey PRIMARY KEY (id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE angularjs.form
+    OWNER to postgres;
