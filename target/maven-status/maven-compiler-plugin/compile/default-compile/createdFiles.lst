@@ -1,7 +1,4 @@
-hello\repository\FormRepository.class
 hello\MvcConfig.class
-hello\model\Form.class
-hello\dto\FormInfoDTO.class
 hello\MyController.class
 hello\repository\UserRepository.class
 hello\dto\UserDTO.class

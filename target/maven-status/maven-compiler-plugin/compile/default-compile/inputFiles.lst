@@ -1,9 +1,6 @@
-D:\Projects\myAng\src\main\java\hello\repository\FormRepository.java
-D:\Projects\myAng\src\main\java\hello\dto\UserDTO.java
-D:\Projects\myAng\src\main\java\hello\repository\UserRepository.java
-D:\Projects\myAng\src\main\java\hello\dto\FormInfoDTO.java
-D:\Projects\myAng\src\main\java\hello\model\Form.java
-D:\Projects\myAng\src\main\java\hello\MvcConfig.java
-D:\Projects\myAng\src\main\java\hello\model\User.java
-D:\Projects\myAng\src\main\java\hello\MyController.java
-D:\Projects\myAng\src\main\java\hello\Application.java
+D:\Projects\angularjsForm\src\main\java\hello\model\User.java
+D:\Projects\angularjsForm\src\main\java\hello\Application.java
+D:\Projects\angularjsForm\src\main\java\hello\MvcConfig.java
+D:\Projects\angularjsForm\src\main\java\hello\MyController.java
+D:\Projects\angularjsForm\src\main\java\hello\dto\UserDTO.java
+D:\Projects\angularjsForm\src\main\java\hello\repository\UserRepository.java

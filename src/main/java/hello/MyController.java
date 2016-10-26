@@ -1,10 +1,7 @@
 package hello;
 
 import hello.dto.UserDTO;
-import hello.dto.FormInfoDTO;
-import hello.model.Form;
 import hello.model.User;
-import hello.repository.FormRepository;
 import hello.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -26,10 +23,7 @@ public class MyController {
     @Autowired
     private UserRepository userRepository;
 
-    @Autowired
-    private FormRepository formRepository;
-
-// Get example
+    // Get example
     @RequestMapping(value = "/myMarks",
             method = RequestMethod.GET,
             produces = MediaType.APPLICATION_JSON_VALUE)
@@ -37,7 +31,7 @@ public class MyController {
         return new ResponseEntity<>(500, HttpStatus.OK);
     }
 
-//    Post example
+    //    Post example
     @RequestMapping(value = "/postMarks",
             method = RequestMethod.POST,
             produces = MediaType.APPLICATION_JSON_VALUE)
@@ -46,35 +40,25 @@ public class MyController {
         return new ResponseEntity<>(data, HttpStatus.OK);
     }
 
-//    DTO example
-    @RequestMapping(value = "/saveUser",
+    // Update db with form data
+    @RequestMapping(value = "/update",
             method = RequestMethod.POST,
             produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<UserDTO> postMarks(@Valid @RequestBody UserDTO userDTO) {
-        //Save user to db
+        //Save user data to db
         User user = new User();
         user.setId(userDTO.getId());
-        user.setName(userDTO.getName());
+        user.setFirstName(userDTO.getFirstName());
+        user.setLastName(userDTO.getLastName());
+        user.setAddress(userDTO.getAddress());
+        user.setCity(userDTO.getCity());
+        user.setState(userDTO.getState());
+        user.setZip(userDTO.getZip());
+        user.setPhone(userDTO.getPhone());
+        user.setEmail(userDTO.getEmail());
 
         User savedUser = userRepository.save(user);
 
         return new ResponseEntity<>(userDTO, HttpStatus.OK);
-    }
-
-    // Form example
-    @RequestMapping(value = "/saveData",
-            method = RequestMethod.POST,
-            produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<FormInfoDTO> postMarks(@Valid @RequestBody FormInfoDTO formInfoDTO) {
-        //Save form data to db
-        Form form = new Form();
-        form.setId(formInfoDTO.getId());
-        form.setName(formInfoDTO.getName());
-        form.setEmail(formInfoDTO.getEmail());
-        form.setPassword(formInfoDTO.getPassword());
-
-        Form savedData = formRepository.save(form);
-
-        return new ResponseEntity<>(formInfoDTO, HttpStatus.OK);
     }
 }
